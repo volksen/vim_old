@@ -9,7 +9,7 @@ git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
 cd ~
 git clone http://github.com/username/dotvim.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/vimrc ~/.gvimrc
+ln -s ~/.vim/gvimrc ~/.gvimrc
 cd ~/.vim
 git submodule update --init
 
