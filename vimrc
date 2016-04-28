@@ -84,6 +84,7 @@ autocmd User fugitive
 			\ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
 			\   nnoremap <buffer> .. :edit %:h<CR> |
 			\ endif
+set diffopt+=vertical
 
 "---------------- matchit plugin
 runtime macros/matchit.vim
