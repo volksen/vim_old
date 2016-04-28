@@ -361,8 +361,8 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 "--------------------------- omni complete
 set omnifunc=syntaxcomplete#Complete
-" set guifont=Monospace\ 14
-set guifont=Source\ Code\ Pro\ Medium\ 14
+set guifont=Monospace\ 14
+" set guifont=Source\ Code\ Pro\ Medium\ 14
 
 "let g:miniBufExplMapWindowNavVim = 1
 "let g:miniBufExplMapWindowNavArrows = 1
