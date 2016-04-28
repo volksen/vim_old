@@ -53,9 +53,9 @@ set wildmode=longest,list,full  " how to do tab completion
 "set wildmode=full				" might also be a valid option to try
 set nu                          " line numbers
 if has("gui_running")
-	colorscheme slatedark
+	colorscheme SlateDark
 else
-	colorscheme slatedark
+	colorscheme SlateDark
 endif
 "let g:molokai_original = 0
 
@@ -361,7 +361,8 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 "--------------------------- omni complete
 set omnifunc=syntaxcomplete#Complete
-set guifont=Monospace\ 14
+" set guifont=Monospace\ 14
+set guifont=Source\ Code\ Pro\ Medium\ 14
 
 "let g:miniBufExplMapWindowNavVim = 1
 "let g:miniBufExplMapWindowNavArrows = 1
