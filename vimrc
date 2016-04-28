@@ -86,6 +86,8 @@ autocmd User fugitive
 			\ endif
 set diffopt+=vertical
 
+noremap <F5> :diffupdate<CR>
+
 "---------------- matchit plugin
 runtime macros/matchit.vim
 
@@ -176,7 +178,7 @@ if exists(":Tabularize")
 endif
 
 "------------------------------- gundo
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
 
 "------------------------------ vimrc
 nmap <leader>v :tabedit $MYVIMRC<CR>
