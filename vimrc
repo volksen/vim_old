@@ -77,11 +77,14 @@ if maparg('<C-S>', 'n') ==# ''
 endif
 
 "---------------- fungitive (git)
+" deletes browse buffers (fugitive opens a new buffer each time you browse an
+" object)
 autocmd BufReadPost fugitive://* set bufhidden=delete
+" set branch name in status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 let g:fugitive_git_executable = 'LANG=en git'
-
+" maps .. to :edit %:h in tree blobs to go up one directory
 autocmd User fugitive
 			\ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
 			\   nnoremap <buffer> .. :edit %:h<CR> |
