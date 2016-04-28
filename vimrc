@@ -53,9 +53,9 @@ set wildmode=longest,list,full  " how to do tab completion
 "set wildmode=full				" might also be a valid option to try
 set nu                          " line numbers
 if has("gui_running")
-	colorscheme molokai
+	colorscheme slatedark
 else
-	colorscheme molokai
+	colorscheme slatedark
 endif
 "let g:molokai_original = 0
 
@@ -178,7 +178,7 @@ endif
 nnoremap <F5> :GundoToggle<CR>
 
 "------------------------------ vimrc
-nmap <leader>v :tabedit ~/Dropbox/vim/vimrc<CR>
+nmap <leader>v :tabedit $MYVIMRC<CR>
 " Source the vimrc file after saving it
 if has("autocmd")
 	autocmd bufwritepost vimrc source $MYVIMRC
