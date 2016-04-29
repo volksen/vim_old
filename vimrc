@@ -1,5 +1,6 @@
 "---------------- should be in first line
 execute pathogen#infect()
+call pathogen#helptags()
 
 "------------------------ vim specific settings
 set nocompatible	" Vim Mode
