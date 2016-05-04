@@ -1,6 +1,11 @@
 "---------------- should be in first line
+let g:pathogen_disabled = []
+if has('win32')
+	call add(g:pathogen_disabled, 'taglist')
+endif
 execute pathogen#infect()
 call pathogen#helptags()
+
 
 "------------------------ vim specific settings
 set nocompatible	" Vim Mode
@@ -134,9 +139,12 @@ noremap \ ,
 "nnoremap ` '
 
 "------------------------- ctags
-noremap <F8> :!ctags -R<CR>
-
+if has('unix')
+	noremap <F8> :!ctags -R<CR>
+elseif has('win32')
+endif
 "----------------------- eng keyboard keys
+if has('unix')
 nmap Ã¼ <C-]>
 nmap <leader>Ã¼ g<C-]>
 nmap Ã¶ [
@@ -157,7 +165,28 @@ xmap Ã¶ [
 xmap Ã¤ ]
 xmap Ã– {
 xmap Ã„ }
+elseif has('win32')
+nmap ü <C-]>
+nmap <leader>ü g<C-]>
+nmap ö [
+nmap ä ]
+nmap Ö {
+nmap Ä }
 
+omap ü <C-]>         
+omap <leader>ü g<C-]>
+omap ö [             
+omap ä ]             
+omap Ö {             
+omap Ä }             
+
+xmap ü <C-]>         
+xmap <leader>ü g<C-]>
+xmap ö [             
+xmap ä ]             
+xmap Ö {             
+xmap Ä }             
+endif
 "----------- text bubbling 2: only works with unimpaired plugin
 "Bubble single lines
 nmap <A-Up> [e
@@ -341,8 +370,11 @@ set tags+=~/mira
 set tags+=~/mira-pkg
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:â–¸\ ,eol:Â¬
-
+if has('unix')
+	set listchars=tab:â–¸\ ,eol:Â¬
+elseif('win32')
+	"
+endif
 "-------------- folding
 " toggles current folding
 nnoremap <Space> za
@@ -370,10 +402,14 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 "--------------------------- omni complete
 set omnifunc=syntaxcomplete#Complete
+if has('unix')
 set guifont=Monospace\ 14
 " set guifont=Source\ Code\ Pro\ Medium\ 14
 
+elseif has('win32')
+	set guifont=Source_Code_Pro_Medium:h12
+endif
 "let g:miniBufExplMapWindowNavVim = 1
-"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapWindowNavArrows = 0
 "let g:miniBufExplMapCTabSwitchBufs = 1
 "let g:miniBufExplModSelTarget = 1
