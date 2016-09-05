@@ -5,8 +5,8 @@ vim config files
 git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
 
 ## checkout on new machine
-cd ~
-git clone http://github.com/username/dotvim.git ~/.vim  
+cd ~  
+git clone http://github.com/volksen/vim.git ~/.vim  
 ln -s ~/.vim/vimrc ~/.vimrc  
 ln -s ~/.vim/vimrc ~/.gvimrc  
 cd ~/.vim  
