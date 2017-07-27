@@ -106,8 +106,7 @@ runtime macros/matchit.vim
 nnoremap Q @q
 
 "------------------- path for :find
-set path+=~/Dropbox/**
-set path+=~/wrk/**
+set path+=C:\Users\michael.volkhardt\sublime\project
 
 "------------ completion
 set completeopt=longest,menuone
@@ -366,6 +365,7 @@ map <leader>et :tabe %%
 
 "----------------------------------------- tags
 set tags=~/wrk/tags
+set tags+=C:\Users\michael.volkhardt\sublime\projects
 set tags+=~/mira
 set tags+=~/mira-pkg
 
