@@ -26,7 +26,7 @@ set showcmd			" display incomplete commands
 inoremap <C-U> <C-G>u<C-U>
 
 if has('mouse')
-	set mouse=a
+	set mouse=v  
 endif
 
 if has("autocmd")
@@ -55,13 +55,13 @@ endif
 set virtualedit=all				" cursor virtuell überall
 set hidden						" allow hidden buffers
 set wildmenu                    " menu tab completion
-set wildmode=longest,list,full  " how to do tab completion
-"set wildmode=full				" might also be a valid option to try
+"set wildmode=longest,list,full  " how to do tab completion
+set wildmode=full				" might also be a valid option to try
 set nu                          " line numbers
 if has("gui_running")
-	colorscheme SlateDark
+	colorscheme dracula
 else
-	colorscheme SlateDark
+	colorscheme dracula
 endif
 "let g:molokai_original = 0
 
@@ -106,7 +106,7 @@ runtime macros/matchit.vim
 nnoremap Q @q
 
 "------------------- path for :find
-set path+=C:\Users\michael.volkhardt\sublime\project
+set path=**
 
 "------------ completion
 set completeopt=longest,menuone
@@ -126,8 +126,8 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
 "--------------------------- leader key
-let mapleader=','
-noremap \ ,
+"let mapleader=','
+"noremap \ ,
 "set timeoutlen=2000
 
 "--------------------------------- tag list
@@ -203,7 +203,6 @@ nmap <C-Down> <C-e>
 nmap gV `[v`]
 
 "---------------------------- tabularize
-let mapleader=','
 if exists(":Tabularize")
 	nmap <Leader>a= :Tabularize /=<CR>
 	vmap <Leader>a= :Tabularize /=<CR>
@@ -292,6 +291,7 @@ endif
 set spelllang=de_de
 
 "--------------------------------------- window movement
+" this allows to navigate between windows using CTRL-hjkl
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -350,14 +350,15 @@ map <F3> :NERDTreeFind<CR>
 "let g:NERDTreeChDirMode = 2
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif "close if last window is nerdtree
 
-"let NERDTreeHijackNetrw=1
+let NERDTreeHijackNetrw=0
 
 "-------------------- path to current file
 "autocmd bufenter * silent! lcd %:p:h
 map <leader>. :lcd %:p:h<CR>
 
 "------------------------------------- open in current dir
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+"cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
@@ -413,3 +414,11 @@ endif
 "let g:miniBufExplMapWindowNavArrows = 0
 "let g:miniBufExplMapCTabSwitchBufs = 1
 "let g:miniBufExplModSelTarget = 1
+
+
+"-------------------- disable arrow keys for trainings
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
